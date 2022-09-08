@@ -1,11 +1,11 @@
-import { Profile } from '../User/User';
-import user from 'user.json';
+import { UserCreate } from '../User/User';
+import user from '../JSONdata/user.json';
 import { Statistic } from "../Stats/DataMarkup"
-import data from "data.json"
+import data from "../JSONdata/data.json"
 import { FriendList } from '../Friends/FriendsList';
-import friends from "friends.json";
+import friends from "../JSONdata/friends.json";
 import { TransactionHistory } from '../Transactions/TransactionHistory';
-import transactions from "transactions.json";
+import transactions from "../JSONdata/transactions.json";
 
 import { Container, Section } from './App.styled';
 
@@ -16,12 +16,14 @@ export const App = () => {
   return (
     <Container>
   <Section>    {/* <Profile user={user} /> */}
-    <Profile
+    <UserCreate
       username={user.username}
       tag={user.tag}
       location={user.location}
       avatar={user.avatar}
-      stats={user.stats}
+          followers={user.stats.followers}
+          views={user.stats.views}
+          likes={user.stats.likes}
         />
   </Section>
   <Section> 
@@ -39,11 +41,3 @@ export const App = () => {
 };
 
 
-      // style={{
-      //   height: '100vh',
-      //   display: 'flex',
-      //   justifyContent: 'center',
-      //   alignItems: 'center',
-      //   fontSize: 20,
-      //   color: '#010101',
-      // }}

@@ -10,7 +10,7 @@ import { SectionBox } from './User.styled';
 import { UserBox } from './User.styled';
 import { UserInfo } from './User.styled';
 
-export const Profile = ({ username, tag, location, avatar, stats }) => {
+export const UserCreate = ({ username, tag, location, avatar, followers,views,likes }) => {
   return (
     <SectionBox>
       <UserBox>
@@ -21,15 +21,15 @@ export const Profile = ({ username, tag, location, avatar, stats }) => {
       <ul className="stats">
         <li>
           <span className="label"><RiUserFollowFill/> </span>
-          <span className="quantity">{stats.followers}</span>
+          <span className="quantity">{followers}</span>
         </li>
         <li>
             <span className="label"><GrView/> </span>
-          <span className="quantity">{stats.views}</span>
+          <span className="quantity">{views}</span>
         </li>
         <li>
           <span className="label"><FcLike/> </span>
-          <span className="quantity">{stats.likes}</span>
+          <span className="quantity">{likes}</span>
         </li>
       </ul>
       </UserBox>
@@ -37,10 +37,12 @@ export const Profile = ({ username, tag, location, avatar, stats }) => {
   );
 };
 
-Profile.propTypes = {
+UserCreate.propTypes = {
   username: PropTypes.string.isRequired,
   tag: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   avatar: PropTypes.string.isRequired,
-  stats: PropTypes.objectOf(PropTypes.number.isRequired),
+  followers: PropTypes.number.isRequired,
+  views: PropTypes.number.isRequired,
+  likes:PropTypes.number.isRequired
 };
