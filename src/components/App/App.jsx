@@ -1,11 +1,11 @@
 import { UserCreate } from '../User/User';
-import user from '../JSONdata/user.json';
+import user from '../DataJson/user.json';
 import { Statistic } from "../Stats/DataMarkup"
-import data from "../JSONdata/data.json"
+import data from "../DataJson/data.json"
 import { FriendList } from '../Friends/FriendsList';
-import friends from "../JSONdata/friends.json";
+import friends from "../DataJson/friends.json";
 import { TransactionHistory } from '../Transactions/TransactionHistory';
-import transactions from "../JSONdata/transactions.json";
+import transactions from "../DataJson/transactions.json";
 
 import { Container, Section } from './App.styled';
 
